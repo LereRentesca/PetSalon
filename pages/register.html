@@ -4,26 +4,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/register.css">
-    <link rel="stylesheet" href="../styles/style.css">
+    <!-- <link rel="stylesheet" href="../styles/style.css"> -->
+    <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
     <title>Register</title>
 </head>
 <body>
     <header>
-        <h1>The Fashion Pet</h1>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="register.html">Register</a>
-            <a href="services.html">Services</a>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">The Pet Salon</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../index.html"><i class="fa-solid fa-house"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="register.html">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
         </nav>
     </header>
     <main>
         <h2>Register</h2>
-        <div class="assignment-1">
+        <div class="container-md">
+          <div class="mb-3">
+            <label class="form-label">Name:</label>
+            <input type="text" name="Name" id="txtName" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Age:</label>
+            <input type="text" name="Age" id="txtAge" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Gender:</label><br>
+            <input type="radio" class="btn-check" name="options" id="gender-female" autocomplete="off" checked value="Female">
+            <label class="btn btn-secondary btn-gender" for="gender-female">Female</label>
+
+            <input type="radio" class="btn-check" name="options" id="gender-male" autocomplete="off" value="Male">
+            <label class="btn btn-secondary btn-gender" for="gender-male">Male</label>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="pet-type">Pet Type:</label>
+            <select class="form-select" name="pet-type" id="pet-type" onchange="chargeDogs()">
+              <option value="default" selected disabled>Choose the type</option>
+              <option value="Dog">Dog</option>
+              <option value="Cat">Cat</option>
+              <option value="Guinea Pig">Guinea Pig</option>
+              <option value="Bird">Birds</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="pet-breed">Breed:</label>
+            <select class="form-select" name="pet-breed" id="pet-breed">
+              <option value="default" selected disabled>Choose the breed</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="pet-services">Service:</label>
+            <select class="form-select" name="pet-services" id="pet-services">
+              <option value="default" selected disabled>Choose the service</option>
+              <option value="Full Service">Full Service</option>
+              <option value="Grooming">Grooming</option>
+              <option value="Cutting">Cutting</option>
+              <option value="Vaccines">Vaccines</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Owner:</label>
+            <input type="text" name="Owner" id="txtOwner" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone:</label>
+            <input type="text" name="Phone" id="txtPhone" class="form-control">
+          </div>
+          <div class="register-btn-container">
+            <button type="button" class="btn btn-primary" id="register-btn" onclick="register()">Register</button>
+          </div>
+        </div>
+        <!-- <div class="assignment-1">
             <button onclick="displayPets()"># Pets</button>
             <button onclick="displayPetsNames()">Pets Names</button>
-        </div>
+        </div> -->
     </main>
     <footer id="footer" class="page-footer">
     </footer>
