@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/337be747ec.js" crossorigin="anonymous"></script>
     <title>Index</title>
 </head>
@@ -18,7 +20,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
+                  <li class="nav-item home-icon">
                     <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i></a>
                   </li>
                   <li class="nav-item">
@@ -40,9 +42,42 @@
           </nav>
     </header>
     <main>
-        <div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita necessitatibus rem nesciunt dolores veritatis impedit molestiae. Assumenda repellat ex rerum voluptates numquam aut? Iure non quidem numquam consequuntur eveniet nostrum maiores quibusdam omnis doloribus nobis. Rerum et amet eos laboriosam in animi illo, laborum ipsam perferendis odit assumenda modi est sapiente at minima, reprehenderit unde. Beatae id eaque quidem cum possimus nihil corporis, nostrum harum modi autem, doloribus ut sint soluta? Earum voluptas nihil nam sunt quos voluptate tempore? Sit eius veritatis quibusdam dolor consequatur cum fugiat itaque, laboriosam saepe impedit tempore officiis in fuga voluptates culpa enim earum architecto consectetur, debitis ut. Quod enim doloremque perspiciatis esse, repudiandae, unde eveniet quibusdam officiis odit eum velit natus, aut non hic ex consectetur tempore voluptatum possimus quam laborum voluptates excepturi obcaecati? Magni, explicabo! In distinctio nulla quam quos placeat. Facere voluptate adipisci modi quia nihil placeat, in molestiae autem ipsum pariatur.</p>
+        <div class="container">
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="card d-block">
+                  <img src="images/logo.png" alt="logo">
+                  <div class="pet-item">
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card d-block">
+                  <img src="images/logo.png" alt="logo">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="card d-block">
+                  <img src="images/logo.png" alt="logo">
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
         </div>
     </main>
+    <footer id="footer">
+
+    </footer>
+    <script src="scripts/displayFooter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

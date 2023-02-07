@@ -1,0 +1,10 @@
+body{
+    background-image: url("../images/bg-image.avif");
+    background-size: 500px;
+}
+
+@media(max-width:979px){
+    .home-icon{
+        display: none;
+    }
+}

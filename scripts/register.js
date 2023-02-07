@@ -1,30 +1,3 @@
-//object literal
-let petSalon = {
-    name:"The Fashion Pet",
-    phone:"555-555-555",
-    workingHours:{
-        open:"9:00 am",
-        close:"9:00 pm"
-    },
-    address:{
-        street:"Palm Ave",
-        zip:"22345",
-        city:"San Diego"
-    },
-    pets:[]
-};
-
-
-function displayFooterInfo(){
-    let item = `
-    <div class="footer-info">
-    <p>${petSalon.name} it opens at ${petSalon.workingHours.open} to ${petSalon.workingHours.close}</p>
-    <p>${petSalon.address.street}, ${petSalon.address.city}, ${petSalon.address.zip}</p>
-    </div>
-    `;
-    document.getElementById("footer").innerHTML=item;
-}
-
 function displayPets(){
     alert(`The salon actually have: ${petSalon.pets.length} pets`);
 }
@@ -58,6 +31,32 @@ let inputOwner = document.getElementById("txtOwner");
 let inputPhone = document.getElementById("txtPhone");
 const radioButtons = document.querySelectorAll('input[name="options"]');
 let btn = document.querySelector('#register-btn');
+
+function isValid(pet){
+    let valid=true;
+    if(pet.name===""){
+        valid=false;
+        inputName.classList.add("input-alert-error");
+    }
+
+    if(pet.service==="default"||pet.type==="default"){
+        inputService.classList.add("input-alert-warning");
+        inputType.classList.add("input-alert-warning");
+        valid=false;
+
+    }
+
+    if(pet.owner===""){
+        inputOwner.classList.add("input-alert-error");
+        valid=false;
+    }
+
+    if(pet.phone===""){
+        inputPhone.classList.add("input-alert-error");
+        valid=false;
+    }
+    return valid;
+}
 
 function chargeDogs(){
     console.log(inputType.value);
@@ -117,26 +116,27 @@ function chargeDogs(){
 }
 
 function register(){
-    if(inputName.value==""){
-        alert("You have to enter a name")
-    } else {
-        console.log("Register a new pet");
-        let selectedGender;
-        for(const radioButton of radioButtons){
-            if(radioButton.checked){
-                selectedGender = radioButton.value;
-                break;
-            }
+    console.log("Register a new pet");
+    let selectedGender;
+    for(const radioButton of radioButtons){
+        if(radioButton.checked){
+            selectedGender = radioButton.value;
+            break;
         }
-        //create a new pet
-        let newPet = new Pet(inputName.value,inputAge.value,selectedGender,inputType.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
+    }
+    //create a new pet
+    let newPet = new Pet(inputName.value,inputAge.value,selectedGender,inputType.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
+    if(isValid(newPet)){
         //display the pet on the console
         console.log(newPet);
         //push the pet into the array
         petSalon.pets.push(newPet);
         //display the number of registered pets
         clearForm();
+        displayPetCarousel();
         displayPets();
+    } else{
+    alert("Fill the form properly");
     }
 }
 
@@ -154,9 +154,9 @@ function clearForm(){
 
 function init(){
     //events
-
-    //call the functions
-
-    //create obj
+    let scooby=new Pet("Scooby",10,"Male","Dog","Chihuahua","Full Service","No Owner","xxx-xxx-xxxx");
+    let scrappy=new Pet("Scrappy",5,"Female","Dog","Dalmatian","Cutting","No Owner","xxx-xxx-xxxx");
+    petSalon.pets.push(scooby,scrappy);
+    displayPetCarousel();
 }
 window.onload=init;
