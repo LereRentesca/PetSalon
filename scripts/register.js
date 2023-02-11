@@ -133,7 +133,7 @@ function register(){
         petSalon.pets.push(newPet);
         //display the number of registered pets
         clearForm();
-        displayPetCarousel();
+        displayPetTable();
         displayPets();
     } else{
     alert("Fill the form properly");
@@ -152,11 +152,39 @@ function clearForm(){
     inputType.value="default";
 }
 
+function search(){
+    let text = document.getElementById("txtSearch").value;
+    let results=[];
+    console.log("search text is: "+text);
+    for(let i=0;i<petSalon.pets.length;i++){
+        const pet=petSalon.pets[i];
+        if(pet.name.toLowerCase().includes(text.toLowerCase())){
+            results.push(pet);
+        }
+    }
+    console.log(results);
+}
+
+function deletePet(name){
+    console.log("DELETING..."+name);
+    let proceed = confirm("Are you sure you want to remove " + name + " from the salon?");
+    if(proceed===true){
+        for(let i=0;i<petSalon.pets.length;i++){
+            const pet = petSalon.pets[i];
+            if(pet.name===name){
+                petSalon.pets.splice(i,1);
+                displayPetTable();
+                displayPets();
+            }
+        }
+    }
+}
+
 function init(){
     //events
     let scooby=new Pet("Scooby",10,"Male","Dog","Chihuahua","Full Service","No Owner","xxx-xxx-xxxx");
     let scrappy=new Pet("Scrappy",5,"Female","Dog","Dalmatian","Cutting","No Owner","xxx-xxx-xxxx");
     petSalon.pets.push(scooby,scrappy);
-    displayPetCarousel();
+    displayPetTable();
 }
 window.onload=init;

@@ -108,3 +108,20 @@ body{
 .pets{
     margin-bottom: 30px;
 }
+
+.table-body{
+    background-color: white;
+}
+
+/* .pet{
+    border: 1px solid #222222;
+    background-color: #dedede;
+    padding: 10px;
+}
+
+#pets{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+} */
