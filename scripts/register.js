@@ -156,10 +156,10 @@ function search(){
     let text = document.getElementById("txtSearch").value;
     let results=[];
     console.log("search text is: "+text);
-    for(let i=0;i<petSalon.pets.length;i++){
-        const pet=petSalon.pets[i];
-        if(pet.name.toLowerCase().includes(text.toLowerCase())){
-            results.push(pet);
+
+    for (const item of petSalon.pets){
+        if(item.name.toLowerCase().includes(text.toLowerCase())){
+            results.push(item);
         }
     }
     console.log(results);

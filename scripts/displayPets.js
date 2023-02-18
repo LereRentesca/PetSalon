@@ -63,19 +63,19 @@ function displayPetTable(){
   const tbody = document.getElementById("pets-body");
   let rows = "";
 
-  for(let i=0;i<petSalon.pets.length;i++){
-      let pet = petSalon.pets[i];
-      rows+=`<tr>
-      <td>${pet.name}</td>
-      <td>${pet.age}</td>
-      <td>${pet.gender}</td>
-      <td>${pet.breed}</td>
-      <td>${pet.service}</td>
-      <td>${pet.type}</td>
-      <td>${pet.owner}</td>
-      <td>${pet.phoneNumber}</td>
-      <td><button class="btn btn-sm btn-outline-danger" onclick="deletePet('${pet.name}')">Remove</button></td>
-      </tr>`;
+  for (const item of petSalon.pets) {
+    rows+=`
+    <tr>
+      <td>${item.name}</td>
+      <td>${item.age}</td>
+      <td>${item.gender}</td>
+      <td>${item.breed}</td>
+      <td>${item.service}</td>
+      <td>${item.type}</td>
+      <td>${item.owner}</td>
+      <td>${item.phone}</td>
+      <td><button class="btn btn-sm btn-outline-danger" onclick="deletePet('${item.name}')">Remove</button></td>
+    </tr>`;
   }
   tbody.innerHTML = rows;
 }

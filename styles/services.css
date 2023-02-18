@@ -1,0 +1,35 @@
+h2{
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.cutting img{
+    width: 250px;
+}
+
+.full-service{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-service img{
+    margin-right: 10px;
+}
+
+.services{
+    margin-top: 30px;
+    width: 80%;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 30px;
+}
+
+.services-accordion{
+    border-radius: 40px;
+    padding-bottom: 20px;
+}

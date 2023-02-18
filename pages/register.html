@@ -174,41 +174,36 @@
       <div class="registered-pets">
         <h3>Registered Pets</h3>
       </div>
-      <div class="pets container-lg" id="pets">
-        <!-- All the pets go here -->
-        <!-- <div class="container-card">
-          <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner" id="carousel-start">
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+      <div class="container-table">
+
+        <div class="pets container-lg" id="pets">
+          <div class="container-md input-group search-bar">
+            <input
+              type="search"
+              aria-label="search"
+              id="txtSearch"
+              class="form-control"
+              placeholder="Search"
+            />
+            <button class="btn btn-sm btn-primary" onclick="search()">
+              Search
             </button>
           </div>
-        </div> -->
-        <div class="ms-5 mt-3">
-          <input id="txtSearch" type="search" placeholder="Search" />
-          <button class="btn btn-sm btn-primary" onclick="search()">Search</button>
+          <table class="table table-bordered table-stripped ms-t mt-3">
+            <thead class="table-dark">
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Breed</th>
+              <th>Service</th>
+              <th>Type of the pet</th>
+              <th>Owner's name</th>
+              <th>Phone number</th>
+              <th>Options</th>
+            </thead>
+            <tbody id="pets-body" class="table-body"></tbody>
+          </table>
         </div>
-
-        <table class="table table-bordered table-stripped ms-t mt-3">
-          <thead class="table-dark">
-            <th>Name</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Breed</th>
-            <th>Service</th>
-            <th>Type of the pet</th>
-            <th>Owner's name</th>
-            <th>Phone number</th>
-            <th>Options</th>
-          </thead>
-          <tbody id="pets-body" class="table-body"></tbody>
-        </table>
       </div>
     </main>
     <footer id="footer" class="page-footer"></footer>
